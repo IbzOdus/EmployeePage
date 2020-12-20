@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { colors } from '../constants';
 
 const Container = styled.nav`
+    position: sticky;
+    top: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -12,6 +14,7 @@ const Container = styled.nav`
     font-weight: bold;
     min-width: 300px;
     width: 40%;
+    margin-bottom: 20px;
     color: ${colors.primary};
 `;
 

@@ -1,18 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../Navbar';
+import ProfileSection from '../views/ProfileSection';
+import AboutSection from '../views/AboutSection';
+import SubNav from '../SubNav';
 
 const Container = styled.div`
-    flex-direction: row;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export default function ProfileScreen() {
     return <Container>
         <Navbar />
-        {/* <ProfileSection />
+        <ProfileSection />
+        <SubNav />
         <AboutSection />
-        <InterestsSection />
+        {/* <InterestsSection />
         <ProjectsSection />
         <ContactSection /> */}
     </Container>
