@@ -4,8 +4,7 @@ import profilePic from '../images/pexels-pixabay-35183.jpg'
 import { colors } from '../constants';
 
 const Container = styled.div`
-    min-width: 600px;
-    width: 1000px;
+    max-width: 1000px;
     padding-top: 20px;
     background-color: #FFFFFF;
     display: flex;
@@ -44,20 +43,20 @@ const ProfilePicture = styled.img`
     z-index: 1;
 `;
 
-const Position = styled.h3`
-    position: relative;
-    padding: 5px 0px;
-    padding-left: 3ch;
-    bottom: 45px;
-    width: 40ch;
+const PositionText = styled.span`
     font-size: 20px;
-    font-family: 'Courier New';
-    background-color: ${colors.user};
-    border-radius: 5px;
+    color: #FFFFFF;
+    margin-top: 15px;
+    z-index: 2;
 `;
 
-const PositionText = styled.span`
-    color: #FFFFFF;
+const PositionBackground = styled.span`
+    position: relative;
+    bottom: 50px;
+    width: 100%;
+    height: 35px;
+    background-color: ${colors.user};
+    border-radius: 5px;
 `;
 
 export default function ProfileContent() {
@@ -68,12 +67,11 @@ export default function ProfileContent() {
                     Hi there, I'm
                     <br/>
                     <Name>Person Name</Name>
+                    <PositionText>Full-Stack Developer</PositionText>
                 </TextContainer>
                 <ProfilePicture src={profilePic} />
             </TextImageContainer>
-                <Position>
-                    <PositionText>Full-Stack Developer</PositionText>
-                </Position>
+            <PositionBackground />
         </Container>
     )
 };
