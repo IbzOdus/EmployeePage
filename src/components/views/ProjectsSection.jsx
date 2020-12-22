@@ -25,6 +25,7 @@ const NavArrow = styled.span`
     &:hover {
         cursor: pointer;
         color: ${props => props.color};
+        transform: scale(1.1);
     }
 `;
 
@@ -82,14 +83,14 @@ export default function ProjectsSection({ projects, color }) {
         <SectionWrapper id="projects" backgroundColor={colors.primary} color={colors.primary}>
             <SectionHeading color={'#FFFFFF'}>Projects</SectionHeading>
             <Container>
-                <NavArrow color={color} atBoundary={startIndex === 0} onClick={() => setStartIndex(index => index - 1)}>{'<'}</NavArrow>
+                <NavArrow color={color || '#FFFFFF'} atBoundary={startIndex === 0} onClick={() => setStartIndex(index => index - 1)}>{'<'}</NavArrow>
                 <CardsContainer>
                     {projectsOnDisplay.map((project, index) => <ProjectCard key={index} name={project.name} summary={project.summary} thumbnail={project.thumbnailName} points={project.points} color={color} />)}
                 </CardsContainer>
-                <NavArrow color={color} atBoundary={startIndex + displayCount >= projectCount} onClick={() => setStartIndex(index => index + 1)}>{'>'}</NavArrow>
+                <NavArrow color={color || '#FFFFFF'} atBoundary={startIndex + displayCount >= projectCount} onClick={() => setStartIndex(index => index + 1)}>{'>'}</NavArrow>
             </Container>
             <NavIndicator>
-                {projects.map((x, i) => <NavIndicatorPoint key={i} active={i >= startIndex && i <= (startIndex + displayCount) - 1} color={color}/>)}
+                {projects.map((x, i) => <NavIndicatorPoint key={i} active={i >= startIndex && i <= (startIndex + displayCount) - 1} color={color || colors.primaryLight}/>)}
             </NavIndicator>
         </SectionWrapper>
     )

@@ -34,6 +34,7 @@ const SubNavItem = styled.a`
     
     &:hover {
         color: ${props => props.color};
+        transform: scale(1.05);
     }
 `;
 

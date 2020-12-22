@@ -11,6 +11,10 @@ const Container = styled.a`
         color: #FFFFFF;
     }
 
+    &:hover {
+        transform: scale(1.05);
+    }
+
     @media (max-width: 1000px) {
         font-size: 30px;
         padding: 20px 0px;

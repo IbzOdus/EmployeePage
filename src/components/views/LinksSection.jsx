@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 import LinkItem from '../LinkItem';
+import { colors } from '../../constants';
 
 const Container = styled.div`
     display: flex;
@@ -19,7 +20,7 @@ const iconTypeMap = {
 
 export default function LinksSection({ links, color }) {
     return (
-        <SectionWrapper id="links" backgroundColor={color}>
+        <SectionWrapper id="links" backgroundColor={color || colors.primaryLight}>
             <SectionHeading color={'#FFFFFF'}>Links</SectionHeading>
             <Container>
                 {links.map((link, index) => {

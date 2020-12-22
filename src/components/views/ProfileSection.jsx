@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProfileContent from '../ProfileContent';
+import { colors } from '../../constants';
 
 const Container = styled.section`
     display: flex;
@@ -12,6 +13,6 @@ const Container = styled.section`
 
 export default function ProfileSection({ name, position, picture, color}) {
     return <Container id='intro'>
-        <ProfileContent name={name} position={position} picture={picture} color={color}/>
+        <ProfileContent name={name} position={position} picture={picture} color={color || colors.primaryLight}/>
     </Container>
 };
