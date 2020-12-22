@@ -65,7 +65,11 @@ export default function ProjectsSection({ projects, color }) {
     const [projectsOnDisplay, setProjectsOnDisplay] = useState([]);
 
     useEffect(() => {
-        const updateDisplayCount = () => setDisplayCount(determineDisplayCount(window.innerWidth));
+        const updateDisplayCount = () => {
+            setStartIndex(0);
+            setDisplayCount(determineDisplayCount(window.innerWidth));
+        };
+
         window.addEventListener('resize', updateDisplayCount);
         return () => window.removeEventListener('resize', updateDisplayCount);
     }, []);
@@ -74,7 +78,7 @@ export default function ProjectsSection({ projects, color }) {
         let projectsToDisplay = [];
         for (let i = startIndex; i < startIndex + displayCount; i++) {
             projectsToDisplay.push(projects[i]);
-        }
+        };
 
         setProjectsOnDisplay(projectsToDisplay);
     }, [projects, startIndex, displayCount])
@@ -85,7 +89,7 @@ export default function ProjectsSection({ projects, color }) {
             <Container>
                 <NavArrow color={color || '#FFFFFF'} atBoundary={startIndex === 0} onClick={() => setStartIndex(index => index - 1)}>{'<'}</NavArrow>
                 <CardsContainer>
-                    {projectsOnDisplay.map((project, index) => <ProjectCard key={index} name={project.name} summary={project.summary} thumbnail={project.thumbnailName} points={project.points} color={color} />)}
+                    {projectsOnDisplay.map((project, index) => <ProjectCard key={startIndex + index} name={project.name} summary={project.summary} thumbnail={project.thumbnailName} points={project.points} color={color} />)}
                 </CardsContainer>
                 <NavArrow color={color || '#FFFFFF'} atBoundary={startIndex + displayCount >= projectCount} onClick={() => setStartIndex(index => index + 1)}>{'>'}</NavArrow>
             </Container>
