@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 import { colors } from '../../constants';
@@ -20,10 +20,11 @@ const CardsContainer = styled.div`
 const NavArrow = styled.span`
     color: ${colors.primaryLight};
     font-size: 200px;
+    visibility: ${props => props.atBoundary && 'hidden'};
 
     &:hover {
         cursor: pointer;
-        color: ${colors.user};
+        color: ${props => props.color};
     }
 `;
 
@@ -31,6 +32,7 @@ const NavIndicator = styled.div`
     display: flex;
     justify-content: space-around;
     width: 10%;
+    min-width: 50px;
     margin-top: 30px;
 `;
 
@@ -38,39 +40,59 @@ const NavIndicatorPoint = styled.span`
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: ${props => (props.active && colors.user) || '#FFFFFF'};
+    background-color: ${props => (props.active && props.color) || '#FFFFFF'};
 `;
 
-export default function ProjectsSection() {
+const determineDisplayCount = windowWidth => {
+    if (windowWidth > 1800) {
+        return 5;
+    } else if (windowWidth > 1550) {
+        return 4;
+    } else if (windowWidth > 1250) {
+        return 3;
+    } else if (windowWidth > 800) {
+        return 2;
+    } else {
+        return 1;
+    }
+}
+
+export default function ProjectsSection({ projects, color }) {
+    const projectCount = projects.length;
+    const [startIndex, setStartIndex] = useState(0);
+    const [displayCount, setDisplayCount] = useState(determineDisplayCount(window.innerWidth));
+    const [projectsOnDisplay, setProjectsOnDisplay] = useState([]);
+
+    useEffect(() => {
+        const updateDisplayCount = () => {
+            setDisplayCount(determineDisplayCount(window.innerWidth));
+            console.log(window.innerWidth);
+        }
+        window.addEventListener('resize', updateDisplayCount);
+        return () => window.removeEventListener('resize', updateDisplayCount);
+    }, []);
+
+    useEffect(() => {
+        let projectsToDisplay = [];
+        for (let i = startIndex; i < startIndex + displayCount; i++) {
+            projectsToDisplay.push(projects[i]);
+        }
+
+        setProjectsOnDisplay(projectsToDisplay);
+    }, [projects, startIndex, displayCount])
+
     return (
         <SectionWrapper id="projects" backgroundColor={colors.primary} color={colors.primary}>
             <SectionHeading color={'#FFFFFF'}>Projects</SectionHeading>
             <Container>
-                <NavArrow>{'<'}</NavArrow>
-                <CardsContainer>  
-                    <ProjectCard
-                        name={'Project Name Name'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
-                        thumbnail={projectThumbnail}
-                        points={["Cross-Platform application", "Has feature X", "Y million downloads", "Z thousand active users"]}/>
-                    <ProjectCard
-                        name={'Project Name Name'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
-                        thumbnail={projectThumbnail}
-                        points={["Cross-Platform application", "Has feature X", "Y million downloads", "Z thousand active users"]}/>
-                    <ProjectCard
-                        name={'Project Name Name'}
-                        summary={'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
-                        thumbnail={projectThumbnail}
-                        points={["Cross-Platform application", "Has feature X", "Y million downloads", "Z thousand active users"]}/>
+                <NavArrow color={color} atBoundary={startIndex === 0} onClick={() => setStartIndex(index => index - 1)}>{'<'}</NavArrow>
+                <CardsContainer>
+                    {projectsOnDisplay.map((project, index) => <ProjectCard key={index} name={project.name} summary={project.summary} thumbnail={project.thumbnailName} points={project.points} color={color} />)}
                 </CardsContainer>
-                <NavArrow>{'>'}</NavArrow>
+                <NavArrow color={color} atBoundary={startIndex + displayCount >= projectCount} onClick={() => setStartIndex(index => index + 1)}>{'>'}</NavArrow>
             </Container>
             <NavIndicator>
-                <NavIndicatorPoint active/>
-                <NavIndicatorPoint active />
-                <NavIndicatorPoint active />
-                <NavIndicatorPoint />
+                {projects.map((x, i) => <NavIndicatorPoint key={i} active={i >= startIndex && i <= (startIndex + displayCount) - 1} color={color}/>)}
             </NavIndicator>
         </SectionWrapper>
     )
