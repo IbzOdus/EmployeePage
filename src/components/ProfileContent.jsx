@@ -79,7 +79,7 @@ export default function ProfileContent() {
                     Hi there, I'm
                     <br/>
                     <Name>Person Name</Name>
-                    <PositionText>Full-Stack Developer</PositionText>
+                    <PositionText>Full-Stack Developer_</PositionText>
                 </TextContainer>
                 <ProfilePicture src={profilePic} />
             </TextImageContainer>
