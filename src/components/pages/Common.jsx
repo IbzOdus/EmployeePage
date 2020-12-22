@@ -6,6 +6,7 @@ export const SectionWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     font-family: 'Agency FB', 'Roboto';
+    text-align: center;
     font-size: 30px;
     align-items: center;
     padding: 70px;
