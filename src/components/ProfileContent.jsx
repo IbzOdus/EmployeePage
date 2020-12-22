@@ -50,13 +50,25 @@ const PositionText = styled.span`
     z-index: 2;
 `;
 
-const PositionBackground = styled.span`
+const PositionAccent = styled.div`
     position: relative;
     bottom: 50px;
     width: 100%;
+    min-width: 65ch;
     height: 35px;
+    display: flex;
+`;
+
+const PositionAccentColor = styled.span`
     background-color: ${colors.user};
-    border-radius: 5px;
+    border-radius: 12px;
+    flex: 1;
+    height: 100%;
+`;
+
+const PositionAccentHider = styled.span`
+    width: 100px;
+    height: 100%;
 `;
 
 export default function ProfileContent() {
@@ -71,7 +83,10 @@ export default function ProfileContent() {
                 </TextContainer>
                 <ProfilePicture src={profilePic} />
             </TextImageContainer>
-            <PositionBackground />
+            <PositionAccent>
+                <PositionAccentColor />
+                <PositionAccentHider />
+            </PositionAccent>
         </Container>
     )
 };
