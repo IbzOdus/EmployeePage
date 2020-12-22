@@ -30,7 +30,7 @@ const SubNavItem = styled.a`
     }
 `;
 
-const SubNav = () => {
+export default function SubNav() {
     return <Container>
         <SubNavItem href="#about">About</SubNavItem>
         <span>|</span>
@@ -41,5 +41,3 @@ const SubNav = () => {
         <SubNavItem href="#links">Links</SubNavItem>
     </Container>
 };
-
-export default SubNav;

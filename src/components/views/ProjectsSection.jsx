@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { PageWrapper, PageHeading } from '../pages/Common';
 import { colors } from '../../constants';
 
-const ProjectsSection = () => {
+export default function ProjectsSection() {
     return (
         <PageWrapper id="projects" backgroundColor={colors.primary} color={colors.primary}>
             <PageHeading color={'#FFFFFF'}>Projects</PageHeading>
@@ -15,5 +15,3 @@ const ProjectsSection = () => {
         </PageWrapper>
     )
 };
-
-export default ProjectsSection;

@@ -8,7 +8,7 @@ const AboutContent = styled.div`
     text-align: center;
 `;
 
-const AboutSection = () => {
+export default function AboutSection() {
     return (
         <PageWrapper id="about" backgroundColor={'#000000'} backgroundUrl={backgroundImage}>
             <PageHeading>About</PageHeading>
@@ -22,5 +22,3 @@ const AboutSection = () => {
         </PageWrapper>
     )
 };
-
-export default AboutSection;

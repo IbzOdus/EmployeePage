@@ -23,7 +23,7 @@ const InterestsText = styled.div`
     padding: 20px;
 `;
 
-const InterestsSection = () => {
+export default function InterestsSection() {
     return (
         <PageWrapper id="interests" color={colors.primary}>
             <PageHeading>Interests</PageHeading>
@@ -36,5 +36,3 @@ const InterestsSection = () => {
         </PageWrapper>
     )
 };
-
-export default InterestsSection;

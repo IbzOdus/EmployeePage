@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { PageWrapper, PageHeading } from '../pages/Common';
 import { colors } from '../../constants';
 
-const LinksSection = () => {
+export default function LinksSection() {
     return (
         <PageWrapper id="links" backgroundColor={colors.user}>
             <PageHeading color={'#FFFFFF'}>Links</PageHeading>
@@ -15,5 +15,3 @@ const LinksSection = () => {
         </PageWrapper>
     )
 };
-
-export default LinksSection;
