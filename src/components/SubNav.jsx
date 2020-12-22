@@ -38,7 +38,7 @@ const SubNav = () => {
         <span>|</span>
         <SubNavItem href="#projects">Projects</SubNavItem>
         <span>|</span>
-        <SubNavItem href="#contact">Contact</SubNavItem>
+        <SubNavItem href="#links">Links</SubNavItem>
     </Container>
 };
 

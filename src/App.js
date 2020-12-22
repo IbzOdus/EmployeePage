@@ -1,6 +1,12 @@
 import './App.css';
-import Profile from './components/pages/Profile';
+import Navbar from './components/Navbar';
+import ProfilePage from './components/pages/ProfilePage';
 
 export default function App() {
-  return <Profile />;
+  return (
+    <>
+      <Navbar />
+      <ProfilePage />
+    </>
+  );
 }
