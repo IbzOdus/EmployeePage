@@ -13,6 +13,11 @@ const Container = styled.div`
 const ActionImage = styled.img`
     box-shadow: 0px 0px 10px 5px;
     height: 700px;
+
+    @media (max-width: 1000px) {
+        max-width: 400px;
+        height: auto;
+    }
 `; 
 
 const InterestsText = styled.div`

@@ -10,6 +10,11 @@ const Container = styled.a`
     &:visited {
         color: #FFFFFF;
     }
+
+    @media (max-width: 1000px) {
+        font-size: 30px;
+        padding: 20px 0px;
+    }
 `;
 
 export default function LinkItem({text, link, icon}) {
