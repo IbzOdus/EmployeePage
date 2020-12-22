@@ -45,7 +45,7 @@ const NavIndicatorPoint = styled.span`
 `;
 
 const determineDisplayCount = windowWidth => {
-    if (windowWidth > 1800) {
+    if (windowWidth > 1900) {
         return 5;
     } else if (windowWidth > 1550) {
         return 4;
