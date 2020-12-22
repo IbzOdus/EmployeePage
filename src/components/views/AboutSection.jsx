@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import backgroundImage from '../../images/Code Background Center.png';
-import { PageWrapper, PageHeading } from '../pages/Common';
+import { SectionWrapper, SectionHeading } from '../pages/Common';
 
 const AboutContent = styled.div`
     max-width: 80ch;
@@ -10,8 +10,8 @@ const AboutContent = styled.div`
 
 export default function AboutSection() {
     return (
-        <PageWrapper id="about" backgroundColor={'#000000'} backgroundUrl={backgroundImage}>
-            <PageHeading>About</PageHeading>
+        <SectionWrapper id="about" backgroundColor={'#000000'} backgroundUrl={backgroundImage}>
+            <SectionHeading>About</SectionHeading>
                 <AboutContent>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus in hendrerit gravida rutrum quisque non tellus orci ac. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et. Vestibulum morbi blandit cursus risus at ultrices mi. Adipiscing at in tellus integer feugiat. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Pharetra et ultrices neque ornare aenean euismod.
                     <br /> <br />
@@ -19,6 +19,6 @@ export default function AboutSection() {
                     <br /> <br />
                     Scelerisque fermentum dui faucibus in. Diam maecenas sed enim ut sem viverra aliquet eget sit. Nec feugiat nisl pretium fusce id. Eros donec ac odio tempor. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Quam quisque id diam vel quam. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. In pellentesque massa placerat duis ultricies lacus sed. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Donec ac odio tempor orci. Arcu odio ut sem nulla.
                 </AboutContent>
-        </PageWrapper>
+        </SectionWrapper>
     )
 };

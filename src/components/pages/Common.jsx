@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const PageWrapper = styled.section`
+export const SectionWrapper = styled.section`
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -21,7 +21,7 @@ export const PageWrapper = styled.section`
     `};
 `;
 
-export const PageHeading = styled.h1`
+export const SectionHeading = styled.h1`
     font-size: 70px;
     color: ${props => props.color || undefined};
     margin-bottom: 70px;

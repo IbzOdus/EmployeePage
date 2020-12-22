@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PageWrapper, PageHeading } from '../pages/Common';
+import { SectionWrapper, SectionHeading } from '../pages/Common';
 import { colors } from '../../constants';
 import ProjectCard from './ProjectCard';
 import projectThumbnail from '../../images/app-icon-3364869_1280.png';
@@ -44,8 +44,8 @@ const NavIndicatorPoint = styled.span`
 
 export default function ProjectsSection() {
     return (
-        <PageWrapper id="projects" backgroundColor={colors.primary} color={colors.primary}>
-            <PageHeading color={'#FFFFFF'}>Projects</PageHeading>
+        <SectionWrapper id="projects" backgroundColor={colors.primary} color={colors.primary}>
+            <SectionHeading color={'#FFFFFF'}>Projects</SectionHeading>
             <Container>
                 <NavArrow>{'<'}</NavArrow>
                 <CardsContainer>  
@@ -73,6 +73,6 @@ export default function ProjectsSection() {
                 <NavIndicatorPoint active />
                 <NavIndicatorPoint />
             </NavIndicator>
-        </PageWrapper>
+        </SectionWrapper>
     )
 };
