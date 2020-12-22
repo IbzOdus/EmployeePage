@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import interestsImage from '../../images/falaq-lazuardi-2Ul7W3d5pkE-unsplash.jpg';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 import { colors } from '../../constants';
 

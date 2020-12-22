@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import backgroundImage from '../../images/Code Background Center.png';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 
 const AboutContent = styled.div`

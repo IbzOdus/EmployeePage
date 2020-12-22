@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 import { colors } from '../../constants';
 import ProjectCard from './ProjectCard';
-import projectThumbnail from '../../images/app-icon-3364869_1280.png';
 
 const Container = styled.div`
     display: flex;

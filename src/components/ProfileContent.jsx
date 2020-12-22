@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import profilePic from '../images/pexels-pixabay-35183.jpg'
 import { colors } from '../constants';
 
 const Container = styled.div`
