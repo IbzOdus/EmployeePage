@@ -6,8 +6,9 @@ export const PageWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     font-family: 'Agency FB', 'Roboto';
+    font-size: 30px;
     align-items: center;
-    padding: 40px;
+    padding: 70px;
     color: ${props => props.color || '#FFFFFF'};
     background-color: ${props => props.backgroundColor || '#FFFFFF'};
 
@@ -16,10 +17,12 @@ export const PageWrapper = styled.section`
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        background-attachment: fixed;
     `};
 `;
 
 export const PageHeading = styled.h1`
     font-size: 70px;
-    color: ${props => props.color || undefined}
+    color: ${props => props.color || undefined};
+    margin-bottom: 70px;
 `;

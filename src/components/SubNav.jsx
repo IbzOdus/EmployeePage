@@ -14,7 +14,7 @@ const Container = styled.nav`
     font-weight: bold;
     min-width: 300px;
     width: 40%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: ${colors.primary};
 `;
 

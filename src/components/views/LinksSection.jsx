@@ -7,13 +7,11 @@ const LinksSection = () => {
     return (
         <PageWrapper id="links" backgroundColor={colors.user}>
             <PageHeading color={'#FFFFFF'}>Links</PageHeading>
-            <br />
+                <span style={{textAlign: 'center'}}>I'm Person Name<br/>a full stack developer of x years.<br/>I attended y university and graduated with<br/>some degree</span>
                 <br />
-                <span style={{fontSize: '40px', textAlign: 'center'}}>I'm Person Name<br/>a full stack developer of x years.<br/>I attended y university and graduated with<br/>some degree</span>
+                <span style={{textAlign: 'center'}}>I'm Person Name<br/>a full stack developer of x years.<br/>I attended y university and graduated with<br/>some degree</span>
                 <br />
-                <span style={{fontSize: '40px', textAlign: 'center'}}>I'm Person Name<br/>a full stack developer of x years.<br/>I attended y university and graduated with<br/>some degree</span>
-                <br />
-                <span style={{fontSize: '40px', textAlign: 'center'}}>I'm Person Name<br/>a full stack developer of x years.<br/>I attended y university and graduated with<br/>some degree</span>
+                <span style={{textAlign: 'center'}}>I'm Person Name<br/>a full stack developer of x years.<br/>I attended y university and graduated with<br/>some degree</span>
         </PageWrapper>
     )
 };
