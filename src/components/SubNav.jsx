@@ -26,18 +26,18 @@ const SubNavItem = styled.a`
     }
     
     &:hover {
-        color: ${colors.user};
+        color: ${props => props.color};
     }
 `;
 
-export default function SubNav() {
+export default function SubNav({ color }) {
     return <Container>
-        <SubNavItem href="#about">About</SubNavItem>
+        <SubNavItem color={color} href="#about">About</SubNavItem>
         <span>|</span>
-        <SubNavItem href="#interests">Interests</SubNavItem>
+        <SubNavItem color={color} href="#interests">Interests</SubNavItem>
         <span>|</span>
-        <SubNavItem href="#projects">Projects</SubNavItem>
+        <SubNavItem color={color} href="#projects">Projects</SubNavItem>
         <span>|</span>
-        <SubNavItem href="#links">Links</SubNavItem>
+        <SubNavItem color={color} href="#links">Links</SubNavItem>
     </Container>
 };

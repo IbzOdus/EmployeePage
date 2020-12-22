@@ -10,8 +10,8 @@ const Container = styled.section`
     align-items: center;
 `;
 
-export default function ProfileSection() {
+export default function ProfileSection({ name, position, picture, color}) {
     return <Container id='intro'>
-        <ProfileContent />
+        <ProfileContent name={name} position={position} picture={picture} color={color}/>
     </Container>
 };

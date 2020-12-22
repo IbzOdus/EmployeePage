@@ -30,7 +30,7 @@ const TextContainer = styled.div`
 const Name = styled.span`
     font-family: 'Agency FB', 'Roboto';
     font-size: 80px;
-    color: ${colors.user};
+    color: ${props => props.color || colors.primary};
 `;
 
 const ProfilePicture = styled.img`
@@ -59,7 +59,7 @@ const PositionAccent = styled.div`
 `;
 
 const PositionAccentColor = styled.span`
-    background-color: ${colors.user};
+    background-color: ${props => props.color || colors.primary};
     border-radius: 12px;
     flex: 1;
     height: 100%;
@@ -70,20 +70,20 @@ const PositionAccentHider = styled.span`
     height: 100%;
 `;
 
-export default function ProfileContent() {
+export default function ProfileContent({ name, position, picture, color }) {
     return (
         <Container>
             <TextImageContainer>
                 <TextContainer>
                     Hi there, I'm
                     <br/>
-                    <Name>Person Name</Name>
-                    <PositionText>Full-Stack Developer_</PositionText>
+                    <Name color={color}>{name}</Name>
+                    <PositionText>{`${position}_`}</PositionText>
                 </TextContainer>
-                <ProfilePicture src={profilePic} />
+                <ProfilePicture src={`/${picture}`} />
             </TextImageContainer>
             <PositionAccent>
-                <PositionAccentColor />
+                <PositionAccentColor color={color} />
                 <PositionAccentHider />
             </PositionAccent>
         </Container>

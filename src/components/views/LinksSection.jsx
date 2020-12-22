@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
-import { colors } from '../../constants';
 import LinkItem from '../LinkItem';
 
 const Container = styled.div`
@@ -9,16 +8,37 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
-export default function LinksSection() {
+const iconTypeMap = {
+    website: "globe-outline",
+    email: "mail-outline",
+    github: "logo-github",
+    linkedin: "logo-linkedin",
+    youtube: "logo-youtube",
+    phone: "keypad-outline",
+};
+
+export default function LinksSection({ links, color }) {
     return (
-        <SectionWrapper id="links" backgroundColor={colors.user}>
+        <SectionWrapper id="links" backgroundColor={color}>
             <SectionHeading color={'#FFFFFF'}>Links</SectionHeading>
             <Container>
-                <LinkItem text="Website" link="#links" icon="globe-outline" />
-                <LinkItem text="Email" link="mailto:person.name@email.com" icon="mail-outline" />
-                <LinkItem text="GitHub" link="https://github.com/" icon="logo-github" />
-                <LinkItem text="LinkedIn" link="https://linkedin.com/" icon="logo-linkedin" />
-                <LinkItem text="YouTube" link="https://youtube.com/" icon="logo-youtube" />
+                {links.map((link, index) => {
+                    const lowerCaseType = link.type.toLowerCase();
+                    let prepend = '';
+                    if (lowerCaseType === "email") {
+                        prepend = "mailto:";
+                    }
+
+                    if (lowerCaseType === "phone") {
+                        prepend = "tel:"
+                    }
+
+                    return <LinkItem
+                                key={index}
+                                text={link.type}
+                                link={`${prepend}${link.value}`}
+                                icon={iconTypeMap[lowerCaseType]} />
+                })}
             </Container>
         </SectionWrapper>
     )

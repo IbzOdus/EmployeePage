@@ -14,6 +14,12 @@ const Container = styled.div`
     padding: 20px;
     background-color: ${colors.primaryLight};
     border-radius: 15px;
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        border: 3px solid ${props => props.color};
+    }
 `;
 
 const Title = styled.a`
@@ -25,9 +31,7 @@ const Title = styled.a`
     }
     
     &:hover {
-        cursor: pointer;
-        color: ${colors.user};
-        border-color: ${colors.user};
+        color: ${props => props.color};
     }
 `;
 
@@ -52,10 +56,10 @@ const Points = styled.div`
     font-weight: bold;
 `;
 
-export default function ProjectCard({name, summary, thumbnail, points, link}) {
+export default function ProjectCard({name, summary, thumbnail, points, link, color}) {
     return (
-        <Container>
-            <Title href={link}>{name}</Title>
+        <Container color={color}>
+            <Title color={color} href={link}>{name}</Title>
             <Summary>{summary}</Summary>
             <Image src={thumbnail}/>
             <Points>

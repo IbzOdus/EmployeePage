@@ -15,8 +15,8 @@ const Container = styled.a`
 export default function LinkItem({text, link, icon}) {
     return (
         <Container href={link}>
-            <ion-icon style={{marginRight: 10}} name={icon}></ion-icon>
+            <ion-icon style={{marginRight: 10}} name={icon || "chevron-forward-outline"}></ion-icon>
             {text}
         </Container>
     )
-}
+};
