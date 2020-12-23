@@ -16,13 +16,6 @@ const Container = styled.nav`
     width: 40%;
     margin-bottom: 30px;
     color: ${colors.primary};
-
-    @media (max-width: 1000px) {
-        top: 50px;
-        font-size: 20px;
-        padding: 5px 25px 10px 25px;
-        width: 90%;
-    }
 `;
 
 const SubNavItem = styled.a`

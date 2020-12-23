@@ -14,11 +14,6 @@ const Container = styled.a`
     &:hover {
         transform: scale(1.05);
     }
-
-    @media (max-width: 1000px) {
-        font-size: 30px;
-        padding: 20px 0px;
-    }
 `;
 
 export default function LinkItem({text, link, icon}) {
