@@ -20,10 +20,18 @@ export const SectionWrapper = styled.section`
         background-position: center center;
         background-attachment: fixed;
     `};
+
+    @media only screen and (min-width: 700px) {
+        font-size: 1.5rem;
+    }
 `;
 
 export const SectionHeading = styled.h1`
     font-size: 1rem;
     color: ${props => props.color || undefined};
     margin-bottom: 1em;
+
+    @media only screen and (min-width: 700px) {
+        font-size: 3rem;
+    }
 `;

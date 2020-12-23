@@ -5,6 +5,10 @@ import { SectionWrapper, SectionHeading } from '../pages/Common';
 const AboutContent = styled.div`
     max-width: 50ch;
     text-align: center;
+
+    @media only screen and (min-width: 700px) {
+        max-width: 70ch;
+    }
 `;
 
 export default function AboutSection({ text }) {
