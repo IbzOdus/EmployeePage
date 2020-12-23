@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.a`
+const Link = styled.a`
     display: flex;
     color: #FFFFFF;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 0.4rem;
 
     &:visited {
         color: #FFFFFF;
@@ -18,9 +18,11 @@ const Container = styled.a`
 
 export default function LinkItem({text, link, icon}) {
     return (
-        <Container href={link}>
-            <ion-icon style={{marginRight: 10}} name={icon || "chevron-forward-outline"}></ion-icon>
-            {text}
-        </Container>
+        <li>
+            <Link href={link}>
+                <ion-icon style={{marginRight: '0.3rem'}} name={icon || "chevron-forward-outline"} />
+                {text}
+            </Link>
+        </li>
     )
 };

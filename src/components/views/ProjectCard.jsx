@@ -3,27 +3,30 @@ import styled from 'styled-components';
 import { colors } from '../../constants';
 
 const Container = styled.div`
+    position: relative;
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 20px;
+    font-size: 0.5rem;
     font-weight: bold;
-    height: 500px;
-    width: 300px;
-    padding: 20px;
+    height: 15rem;
+    max-width: 10rem;
+    padding: 0.8em;
+    margin: 0rem 1rem;
     background-color: ${colors.primaryLight};
-    border-radius: 15px;
+    border-radius: 0.6rem;
 
     &:hover {
         transform: scale(1.05);
         cursor: pointer;
-        border: 3px solid ${props => props.color};
+        border: 0.3em solid ${props => props.color};
     }
 `;
 
 const Title = styled.a`
-    font-size: 45px;
+    font-size: 1.1rem;
     font-weight: normal;
 
     &:visited {
@@ -36,13 +39,13 @@ const Title = styled.a`
 `;
 
 const Summary = styled.span`
-    padding: 10px 0px;
+    padding: 0.3em 0em;
 `;
 
 const Image = styled.img`
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1.2rem;
     object-fit: cover;
 `;
 
@@ -51,9 +54,25 @@ const Points = styled.div`
     flex-direction: column;
     flex: 1;
     width: 100%;
-    padding-top: 10px;
-    justify-content: space-evenly;
+    padding-top: 0.3em;
+    justify-content: space-around;
     font-weight: bold;
+    padding-bottom: 1.5em;
+`;
+
+const Button = styled.button`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.55rem;
+    font-weight: bold;
+    color: ${colors.primary};
+    background-color: transparent;
+    border: 0.3em solid ${colors.primary};
+    border-right: none;
+    border-bottom: none;
+    padding: 0.3em 1.2em;
+    border-top-left-radius: 0.6rem;
 `;
 
 export default function ProjectCard({name, summary, thumbnail, points, link, color}) {
@@ -67,6 +86,7 @@ export default function ProjectCard({name, summary, thumbnail, points, link, col
                     return <span key={index}>{`• ${point}`}</span>
                 })}
             </Points>
+            <Button>View</Button>
         </Container>
     )
 };

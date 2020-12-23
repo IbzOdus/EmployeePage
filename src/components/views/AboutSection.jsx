@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 
 const AboutContent = styled.div`
-    max-width: 80ch;
+    max-width: 50ch;
     text-align: center;
 `;
 

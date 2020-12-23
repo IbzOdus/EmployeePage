@@ -7,9 +7,9 @@ export const SectionWrapper = styled.section`
     justify-content: center;
     font-family: 'Agency FB', 'Roboto';
     text-align: center;
-    font-size: 30px;
+    font-size: 0.8rem;
     align-items: center;
-    padding: 70px;
+    padding: 1.2em;
     color: ${props => props.color || '#FFFFFF'};
     background-color: ${props => props.backgroundColor || '#FFFFFF'};
 
@@ -23,7 +23,7 @@ export const SectionWrapper = styled.section`
 `;
 
 export const SectionHeading = styled.h1`
-    font-size: 70px;
+    font-size: 1rem;
     color: ${props => props.color || undefined};
-    margin-bottom: 70px;
+    margin-bottom: 1em;
 `;

@@ -5,21 +5,22 @@ import { colors } from '../../constants';
 
 const Container = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    max-width: 1400px;
 `;
 
 const ActionImage = styled.img`
-    box-shadow: 0px 0px 10px 5px;
-    height: 700px;
+    box-shadow: 0 0 0.5rem 0.2rem;
+    max-height: 20rem;
+    max-width: 15rem; 
 `; 
 
 const InterestsText = styled.div`
     text-align: center;
-    width: 50%;
-    min-width: 200px;
-    padding: 20px;
+    width: 50ch;
+    padding: 1.5em;
+    padding-bottom: 0;
 `;
 
 export default function InterestsSection({ picture, text }) {

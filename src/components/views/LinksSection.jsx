@@ -4,9 +4,10 @@ import { SectionWrapper, SectionHeading } from '../pages/Common';
 import LinkItem from '../LinkItem';
 import { colors } from '../../constants';
 
-const Container = styled.div`
+const Container = styled.ul`
     display: flex;
     flex-direction: column;
+    align-items: left;
 `;
 
 const iconTypeMap = {
