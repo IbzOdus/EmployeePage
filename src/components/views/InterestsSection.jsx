@@ -5,11 +5,12 @@ import { colors } from '../../constants';
 
 const Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 
-    @media only screen and (min-width: 600px) {
-        flex-direction: row;
+    @media only screen and (min-width: 700px) {
+        max-width: 90rem;
     }
 `;
 
@@ -17,22 +18,20 @@ const ActionImage = styled.img`
     box-shadow: 0 0 0.5rem 0.2rem;
     max-height: 20rem;
     max-width: 15rem;
+    flex: 0 0 10rem;
+    margin: 0 1.5rem;
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 700px) {
         max-height: 40rem;
-        max-width: 35rem;
+        max-width: 30rem;
     }
 `; 
 
 const InterestsText = styled.div`
     text-align: center;
-    width: 50ch;
     padding: 1.5em;
     padding-bottom: 0;
-
-    @media only screen and (min-width: 600px) {
-        padding: 2em;
-    }
+    flex: 1 0 50ch;
 `;
 
 export default function InterestsSection({ picture, text }) {
