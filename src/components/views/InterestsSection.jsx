@@ -16,12 +16,12 @@ const Container = styled.div`
 
 const ActionImage = styled.img`
     box-shadow: 0 0 0.5rem 0.2rem;
-    max-height: 20rem;
+    max-height: 95vh;
     max-width: 15rem;
     flex: 0 0 10rem;
     margin: 0 1.5rem;
-
-    @media only screen and (min-width: 700px) {
+    
+    @media only screen and (min-width: 850px) {
         max-height: 40rem;
         max-width: 30rem;
     }

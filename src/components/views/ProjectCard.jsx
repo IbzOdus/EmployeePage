@@ -12,6 +12,7 @@ const Container = styled.div`
     font-size: 0.6rem;
     font-weight: bold;
     height: 15rem;
+    max-height: 95vh;
     max-width: 10rem;
     padding: 0.8em;
     margin: 0rem 1rem;
