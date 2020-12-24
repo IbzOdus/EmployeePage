@@ -18,7 +18,6 @@ export const SectionWrapper = styled.section`
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        background-attachment: fixed;
     `};
 
     @media only screen and (min-width: 700px) {
