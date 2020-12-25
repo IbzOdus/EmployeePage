@@ -57,12 +57,14 @@ const determineDisplayCount = windowWidth => {
     } else {
         return 1;
     }
-}
+};
 
 export default function ProjectsSection({ projects, color }) {
     const projectCount = projects.length;
     const [startIndex, setStartIndex] = useState(0);
-    const [displayCount, setDisplayCount] = useState(determineDisplayCount(window.innerWidth));
+    const [displayCount, setDisplayCount] = useState(
+        determineDisplayCount(window.innerWidth)
+    );
     const [projectsOnDisplay, setProjectsOnDisplay] = useState([]);
 
     useEffect(() => {
@@ -79,28 +81,55 @@ export default function ProjectsSection({ projects, color }) {
         let projectsToDisplay = [];
         for (let i = startIndex; i < startIndex + displayCount; i++) {
             projectsToDisplay.push(projects[i]);
-        };
+        }
 
         setProjectsOnDisplay(projectsToDisplay);
-    }, [projects, startIndex, displayCount])
+    }, [projects, startIndex, displayCount]);
 
     return (
-        <SectionWrapper id="projects" backgroundColor={colors.primary} color={colors.primary}>
+        <SectionWrapper
+            id='projects'
+            backgroundColor={colors.primary}
+            color={colors.primary}>
             <SectionHeading color={'#FFFFFF'}>Projects</SectionHeading>
             <Container>
-                <NavArrow color={color || '#FFFFFF'} atBoundary={startIndex === 0} onClick={() => setStartIndex(index => index - 1)}>
-                    <ion-icon name="chevron-back-outline" />
+                <NavArrow
+                    color={color || '#FFFFFF'}
+                    atBoundary={startIndex === 0}
+                    onClick={() => setStartIndex(index => index - 1)}>
+                    <ion-icon name='chevron-back-outline' />
                 </NavArrow>
                 <CardsContainer>
-                    {projectsOnDisplay.map((project, index) => <ProjectCard key={startIndex + index} name={project.name} summary={project.summary} thumbnail={project.thumbnailName} points={project.points} color={color} />)}
+                    {projectsOnDisplay.map((project, index) => (
+                        <ProjectCard
+                            key={startIndex + index}
+                            name={project.name}
+                            summary={project.summary}
+                            thumbnail={project.thumbnailName}
+                            points={project.points}
+                            color={color}
+                        />
+                    ))}
                 </CardsContainer>
-                <NavArrow color={color || '#FFFFFF'} atBoundary={startIndex + displayCount >= projectCount} onClick={() => setStartIndex(index => index + 1)}>
-                    <ion-icon name="chevron-forward-outline" />
+                <NavArrow
+                    color={color || '#FFFFFF'}
+                    atBoundary={startIndex + displayCount >= projectCount}
+                    onClick={() => setStartIndex(index => index + 1)}>
+                    <ion-icon name='chevron-forward-outline' />
                 </NavArrow>
             </Container>
             <NavIndicator>
-                {projects.map((x, i) => <NavIndicatorPoint key={i} active={i >= startIndex && i <= (startIndex + displayCount) - 1} color={color || colors.primaryLight}/>)}
+                {projects.map((x, i) => (
+                    <NavIndicatorPoint
+                        key={i}
+                        active={
+                            i >= startIndex &&
+                            i <= startIndex + displayCount - 1
+                        }
+                        color={color || colors.primaryLight}
+                    />
+                ))}
             </NavIndicator>
         </SectionWrapper>
-    )
-};
+    );
+}

@@ -6,7 +6,7 @@ const Container = styled.div`
     position: relative;
     max-width: 63rem;
     padding: 1.5rem 0;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +62,7 @@ const ProfilePicture = styled.img`
 `;
 
 const PositionText = styled.span`
-    color: #FFFFFF;
+    color: #ffffff;
     margin-top: 1rem;
     z-index: 2;
 
@@ -120,5 +120,5 @@ export default function ProfileContent({ name, position, picture, color }) {
                 <PositionAccentHider />
             </PositionAccent>
         </Container>
-    )
-};
+    );
+}

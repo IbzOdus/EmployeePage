@@ -12,7 +12,7 @@ const Nav = styled.nav`
 
 const Logo = styled.div`
     font-family: Courier New;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 0.8rem;
     padding-left: 1em;
 
@@ -26,7 +26,9 @@ const Logo = styled.div`
 `;
 
 export default function Navbar() {
-    return <Nav>
-        <Logo>Company Name</Logo>
-    </Nav>
-};
+    return (
+        <Nav>
+            <Logo>Company Name</Logo>
+        </Nav>
+    );
+}

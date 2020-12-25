@@ -15,7 +15,7 @@ const LoadingDiv = styled.div`
         0% {
             transform: rotate(0deg);
         }
-        
+
         100% {
             transform: rotate(360deg);
         }
@@ -23,5 +23,5 @@ const LoadingDiv = styled.div`
 `;
 
 export default function Loader() {
-    return <LoadingDiv />
+    return <LoadingDiv />;
 }

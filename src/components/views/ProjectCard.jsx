@@ -40,7 +40,7 @@ const Title = styled.a`
     &:visited {
         color: ${colors.primary};
     }
-    
+
     &:hover {
         color: ${props => props.color};
     }
@@ -107,18 +107,27 @@ const Button = styled.button`
     }
 `;
 
-export default function ProjectCard({name, summary, thumbnail, points, link, color}) {
+export default function ProjectCard({
+    name,
+    summary,
+    thumbnail,
+    points,
+    link,
+    color,
+}) {
     return (
         <Container color={color}>
-            <Title color={color} href={link}>{name}</Title>
+            <Title color={color} href={link}>
+                {name}
+            </Title>
             <Summary>{summary}</Summary>
-            <Image src={thumbnail}/>
+            <Image src={thumbnail} />
             <Points>
                 {points.map((point, index) => {
-                    return <span key={index}>{`• ${point}`}</span>
+                    return <span key={index}>{`• ${point}`}</span>;
                 })}
             </Points>
             <Button color={color}>View</Button>
         </Container>
-    )
-};
+    );
+}

@@ -9,7 +9,7 @@ const Container = styled.nav`
     align-self: start;
     bottom: 1rem;
     left: 1rem;
-    width: ${props => props.open ? "calc(100% - 2rem)" : "2rem"};
+    width: ${props => (props.open ? 'calc(100% - 2rem)' : '2rem')};
     height: 2rem;
     border-radius: 1.5rem;
     background-color: ${colors.primary};
@@ -20,7 +20,7 @@ const Container = styled.nav`
     transition: all ease-in-out 200ms;
     z-index: 5;
     opacity: ${props => !props.open && 0.3};
-    animation: ${props => !props.open && "bounce 10s linear infinite"};
+    animation: ${props => !props.open && 'bounce 10s linear infinite'};
     animation-delay: 2s;
 
     &:hover {
@@ -35,7 +35,7 @@ const Container = styled.nav`
         5% {
             transform: translateX(0.2rem);
         }
-        
+
         10% {
             transform: translateX(0rem);
         }
@@ -53,7 +53,7 @@ const Container = styled.nav`
         position: sticky;
         top: 1rem;
         left: 3rem;
-        width: ${props => props.open ? "calc(100% - 6rem)" : "2rem"};
+        width: ${props => (props.open ? 'calc(100% - 6rem)' : '2rem')};
         margin-top: -2rem;
     }
 `;
@@ -72,12 +72,12 @@ const SubNavItemsContainer = styled.ul`
 `;
 
 const SubNavItem = styled.a`
-    color: #FFFFFF;
+    color: #ffffff;
 
     &:visited {
-        color: #FFFFFF;
+        color: #ffffff;
     }
-    
+
     &:hover {
         transform: scale(1.05);
     }
@@ -98,22 +98,27 @@ export default function SubNav() {
         <Container open={open}>
             <NavIconContainer>
                 <ion-icon
-                    style={{width: "100%", height:"100%", transform: open && "rotate(90deg)", transition: "all ease-in-out 200ms"}}
-                    name="menu-outline"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        transform: open && 'rotate(90deg)',
+                        transition: 'all ease-in-out 200ms',
+                    }}
+                    name='menu-outline'
                     onClick={() => setOpen(open => !open)}
                 />
             </NavIconContainer>
-            {open && 
+            {open && (
                 <SubNavItemsContainer>
-                    <SubNavItem href="#about">About</SubNavItem>
+                    <SubNavItem href='#about'>About</SubNavItem>
                     <span>|</span>
-                    <SubNavItem href="#interests">Interests</SubNavItem>
+                    <SubNavItem href='#interests'>Interests</SubNavItem>
                     <span>|</span>
-                    <SubNavItem href="#projects">Projects</SubNavItem>
+                    <SubNavItem href='#projects'>Projects</SubNavItem>
                     <span>|</span>
-                    <SubNavItem href="#links">Links</SubNavItem>
+                    <SubNavItem href='#links'>Links</SubNavItem>
                 </SubNavItemsContainer>
-            }
+            )}
         </Container>
-    )
-};
+    );
+}

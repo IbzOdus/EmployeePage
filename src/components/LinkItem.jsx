@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const Link = styled.a`
     display: flex;
-    color: #FFFFFF;
+    color: #ffffff;
     align-items: center;
     margin-bottom: 0.4rem;
 
     &:visited {
-        color: #FFFFFF;
+        color: #ffffff;
     }
 
     &:hover {
@@ -16,13 +16,16 @@ const Link = styled.a`
     }
 `;
 
-export default function LinkItem({text, link, icon}) {
+export default function LinkItem({ text, link, icon }) {
     return (
         <li>
             <Link href={link}>
-                <ion-icon style={{marginRight: '0.3rem'}} name={icon || "chevron-forward-outline"} />
+                <ion-icon
+                    style={{ marginRight: '0.3rem' }}
+                    name={icon || 'chevron-forward-outline'}
+                />
                 {text}
             </Link>
         </li>
-    )
-};
+    );
+}

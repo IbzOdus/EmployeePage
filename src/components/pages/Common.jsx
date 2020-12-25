@@ -13,12 +13,14 @@ export const SectionWrapper = styled.section`
     color: ${props => props.color || '#FFFFFF'};
     background-color: ${props => props.backgroundColor || '#FFFFFF'};
 
-    ${props => props.backgroundUrl && css`
-        background-image: url("${props.backgroundUrl}");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    `};
+    ${props =>
+        props.backgroundUrl &&
+        css`
+            background-image: url('${props.backgroundUrl}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        `};
 
     @media only screen and (min-width: 700px) {
         font-size: 1.5rem;
