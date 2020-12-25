@@ -7,17 +7,21 @@ const Nav = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: ${colors.primary}
+    background-color: ${colors.primary};
 `;
 
 const Logo = styled.div`
     font-family: Courier New;
     color: #FFFFFF;
-    font-size: 40px;
-    margin-left: 40px;
+    font-size: 0.8rem;
+    padding-left: 1em;
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media only screen and (min-width: 700px) {
+        font-size: 2rem;
     }
 `;
 
