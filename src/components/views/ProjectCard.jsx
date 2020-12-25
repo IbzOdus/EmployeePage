@@ -33,13 +33,9 @@ const Container = styled.div`
     }
 `;
 
-const Title = styled.a`
+const Title = styled.span`
     font-size: 1.1rem;
     font-weight: normal;
-
-    &:visited {
-        color: ${colors.primary};
-    }
 
     &:hover {
         color: ${props => props.color};
@@ -116,10 +112,10 @@ export default function ProjectCard({
     color,
 }) {
     return (
-        <Container color={color}>
-            <Title color={color} href={link}>
-                {name}
-            </Title>
+        <Container
+            color={color}
+            onClick={() => /* navigate to project page */ {}}>
+            <Title color={color}>{name}</Title>
             <Summary>{summary}</Summary>
             <Image src={thumbnail} />
             <Points>
