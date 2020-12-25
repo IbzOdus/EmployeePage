@@ -22,6 +22,7 @@ export const SectionWrapper = styled.section`
 
     @media only screen and (min-width: 700px) {
         font-size: 1.5rem;
+        padding: 2em;
     }
 `;
 
