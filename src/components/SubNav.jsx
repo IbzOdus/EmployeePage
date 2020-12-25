@@ -20,9 +20,33 @@ const Container = styled.nav`
     transition: all ease-in-out 200ms;
     z-index: 5;
     opacity: ${props => !props.open && 0.3};
+    animation: ${props => !props.open && "bounce 10s linear infinite"};
+    animation-delay: 2s;
 
     &:hover {
         opacity: 1;
+    }
+
+    @keyframes bounce {
+        0% {
+            transform: translateX(0rem);
+        }
+
+        5% {
+            transform: translateX(0.2rem);
+        }
+        
+        10% {
+            transform: translateX(0rem);
+        }
+
+        15% {
+            transform: translateX(0.2rem);
+        }
+
+        20% {
+            transform: translateX(0rem);
+        }
     }
 
     @media only screen and (min-width: 700px) {
