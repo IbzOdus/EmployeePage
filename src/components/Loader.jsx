@@ -12,9 +12,14 @@ const LoadingDiv = styled.div`
     animation: spin 2s linear infinite;
 
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-}
+        0% {
+            transform: rotate(0deg);
+        }
+        
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 `;
 
 export default function Loader() {
