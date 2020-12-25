@@ -30,7 +30,7 @@ export default function ProfilePage() {
 
     return (
         <Container>
-            {/* <ProfileSection name={user.name} position={user.position} picture={user.image} color={user.color}/> */}
+            <ProfileSection name={user.name} position={user.position} picture={user.image} color={user.color}/>
             <SubNav />
             <AboutSection text={user.aboutText}/>
             <InterestsSection picture={user.interests.imgName} text={user.interests.interestsText} />
