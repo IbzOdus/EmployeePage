@@ -94,6 +94,7 @@ const Button = styled.button`
     border-bottom: none;
     padding: 0.3em 1.2em;
     border-top-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
 
     &:hover {
         color: ${props => props.color};
