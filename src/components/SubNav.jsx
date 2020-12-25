@@ -1,44 +1,95 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../constants';
 
 const Container = styled.nav`
-    position: sticky;
-    top: 10px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    align-self: start;
+    bottom: 1rem;
+    left: 1rem;
+    width: ${props => props.open ? "calc(100% - 2rem)" : "2rem"};
+    height: 2rem;
+    border-radius: 1.5rem;
+    background-color: ${colors.primary};
+    mix-blend-mode: luminosity;
+    border: 0.1rem solid white;
+    color: white;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    transition: all ease-in-out 200ms;
+    z-index: 5;
+    opacity: ${props => !props.open && 0.3};
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @media only screen and (min-width: 700px) {
+        position: sticky;
+        top: 1rem;
+        left: 3rem;
+        width: ${props => props.open ? "calc(100% - 6rem)" : "2rem"};
+        margin-top: -2rem;
+    }
+`;
+
+const SubNavItemsContainer = styled.ul`
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    border-radius: 20px;
-    box-shadow: 0px 0px 3px;
-    padding: 3px 20px 5px 20px;
+    flex: 1;
+    mix-blend-mode: none;
     font-weight: bold;
-    min-width: 300px;
-    width: 40%;
-    margin-bottom: 30px;
-    color: ${colors.primary};
+    font-size: 0.8rem;
+
+    @media only screen and (min-width: 700px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const SubNavItem = styled.a`
-    color: ${colors.primary};
-    
+    color: #FFFFFF;
+
     &:visited {
-        color: #bdc3c7;
+        color: #FFFFFF;
     }
     
     &:hover {
-        color: ${props => props.color};
         transform: scale(1.05);
     }
 `;
 
-export default function SubNav({ color }) {
-    return <Container>
-        <SubNavItem color={color} href="#about">About</SubNavItem>
-        <span>|</span>
-        <SubNavItem color={color} href="#interests">Interests</SubNavItem>
-        <span>|</span>
-        <SubNavItem color={color} href="#projects">Projects</SubNavItem>
-        <span>|</span>
-        <SubNavItem color={color} href="#links">Links</SubNavItem>
-    </Container>
+const NavIconContainer = styled.span`
+    width: 1.8rem;
+    height: 1.8rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
+export default function SubNav() {
+    const [open, setOpen] = useState(false);
+    return (
+        <Container open={open}>
+            <NavIconContainer>
+                <ion-icon
+                    style={{width: "100%", height:"100%", transform: open && "rotate(90deg)", transition: "all ease-in-out 200ms"}}
+                    name="menu-outline"
+                    onClick={() => setOpen(open => !open)}
+                />
+            </NavIconContainer>
+            {open && 
+                <SubNavItemsContainer>
+                    <SubNavItem href="#about">About</SubNavItem>
+                    <span>|</span>
+                    <SubNavItem href="#interests">Interests</SubNavItem>
+                    <span>|</span>
+                    <SubNavItem href="#projects">Projects</SubNavItem>
+                    <span>|</span>
+                    <SubNavItem href="#links">Links</SubNavItem>
+                </SubNavItemsContainer>
+            }
+        </Container>
+    )
 };
