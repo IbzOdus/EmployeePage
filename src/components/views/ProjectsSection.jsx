@@ -68,14 +68,15 @@ export default function ProjectsSection({ projects, color }) {
     const [projectsOnDisplay, setProjectsOnDisplay] = useState([]);
 
     useEffect(() => {
-        const updateDisplayCount = () => {
-            setStartIndex(0);
+        const updateDisplayCount = () =>
             setDisplayCount(determineDisplayCount(window.innerWidth));
-        };
-
         window.addEventListener('resize', updateDisplayCount);
         return () => window.removeEventListener('resize', updateDisplayCount);
     }, []);
+
+    useEffect(() => {
+        setStartIndex(0);
+    }, [displayCount]);
 
     useEffect(() => {
         let projectsToDisplay = [];
