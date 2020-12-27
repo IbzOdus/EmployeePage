@@ -21,7 +21,7 @@ const ActionImage = styled.img`
     flex: 0 0 10rem;
     margin: 0 1.5rem;
 
-    @media only screen and (min-width: 850px) {
+    @media only screen and (min-width: 700px) {
         max-height: 40rem;
         max-width: 30rem;
     }
