@@ -68,14 +68,16 @@ export default function ProjectsSection({ projects, color }) {
     const [projectsOnDisplay, setProjectsOnDisplay] = useState([]);
 
     useEffect(() => {
-        const updateDisplayCount = () =>
-            setDisplayCount(determineDisplayCount(window.innerWidth));
-        window.addEventListener('resize', updateDisplayCount);
-        return () => window.removeEventListener('resize', updateDisplayCount);
-    }, []);
+        const handleResize = () => {
+            const newDisplayCount = determineDisplayCount(window.innerWidth);
+            if (displayCount !== newDisplayCount) {
+                setStartIndex(0);
+                setDisplayCount(newDisplayCount);
+            }
+        };
 
-    useEffect(() => {
-        setStartIndex(0);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, [displayCount]);
 
     useEffect(() => {
