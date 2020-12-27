@@ -17,6 +17,7 @@ const iconTypeMap = {
     linkedin: 'logo-linkedin',
     youtube: 'logo-youtube',
     phone: 'keypad-outline',
+    'stack overflow': 'logo-stackoverflow',
 };
 
 export default function LinksSection({ links, color }) {
