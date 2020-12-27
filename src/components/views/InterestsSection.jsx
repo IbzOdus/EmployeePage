@@ -30,7 +30,6 @@ const ActionImage = styled.img`
 const InterestsText = styled.div`
     text-align: center;
     padding: 1.5em;
-    padding-bottom: 0;
     flex: 1 0 50ch;
 `;
 
