@@ -35,14 +35,26 @@ const InterestsText = styled.div`
 `;
 
 export default function InterestsSection({ picture, text }) {
+    const dummyText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+
     return (
         <SectionWrapper id='interests' color={colors.primary}>
             <SectionHeading>Interests</SectionHeading>
             <Container>
                 <ActionImage src={`./${picture}`} />
                 <InterestsText>
-                    {text ||
-                        `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
+                    {/* Depending on how your new line is delimited, this functionality will need to be changed. */}
+                    {text
+                        ? text
+                              .split('\\n')
+                              .map((x, i) =>
+                                  x !== '' ? <p key={i}>{x}</p> : <br key={i} />
+                              )
+                        : dummyText
+                              .split('<br />')
+                              .map((x, i) =>
+                                  x !== '' ? <p key={i}>{x}</p> : <br key={i} />
+                              )}
                 </InterestsText>
             </Container>
         </SectionWrapper>
