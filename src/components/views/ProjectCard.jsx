@@ -18,6 +18,7 @@ const Container = styled.div`
     margin: 0rem 1rem;
     background-color: ${colors.primaryLight};
     border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.4);
 
     ${props =>
         props.clickable &&
