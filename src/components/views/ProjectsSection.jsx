@@ -110,6 +110,7 @@ export default function ProjectsSection({ projects, color }) {
                             summary={project.summary}
                             thumbnail={project.thumbnailName}
                             points={project.points}
+                            link={project.link}
                             color={color}
                         />
                     ))}

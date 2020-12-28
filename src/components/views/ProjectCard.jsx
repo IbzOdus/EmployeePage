@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from '../../constants';
 
 const Container = styled.div`
@@ -19,11 +19,15 @@ const Container = styled.div`
     background-color: ${colors.primaryLight};
     border-radius: 0.6rem;
 
-    &:hover {
-        transform: scale(1.05);
-        cursor: pointer;
-        border: 0.2em solid ${props => props.color};
-    }
+    ${props =>
+        props.clickable &&
+        css`
+            &:hover {
+                transform: scale(1.05);
+                cursor: pointer;
+                border: 0.2em solid ${props => props.color};
+            }
+        `};
 
     @media only screen and (min-width: 700px) {
         height: 30rem;
@@ -114,6 +118,7 @@ export default function ProjectCard({
     return (
         <Container
             color={color}
+            clickable={link !== undefined}
             onClick={() => /* navigate to project page */ {}}>
             <Title color={color}>{name}</Title>
             <Summary>{summary}</Summary>
@@ -123,7 +128,7 @@ export default function ProjectCard({
                     return <span key={index}>{`• ${point}`}</span>;
                 })}
             </Points>
-            <Button color={color}>View</Button>
+            {link && <Button color={color}>View</Button>}
         </Container>
     );
 }
