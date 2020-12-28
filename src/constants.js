@@ -1,6 +1,7 @@
 export const colors = {
     primary: '#7f8c8d',
     primaryLight: '#bdc3c7',
+    primaryDark: '#353b48',
 };
 
 export const defaultUser = {

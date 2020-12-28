@@ -93,7 +93,7 @@ export default function ProjectsSection({ projects, color }) {
         <SectionWrapper
             id='projects'
             backgroundColor={colors.primary}
-            color={colors.primary}>
+            color={colors.primaryDark}>
             <SectionHeading color={'#FFFFFF'}>Projects</SectionHeading>
             <Container>
                 <NavArrow

@@ -88,9 +88,9 @@ const Button = styled.button`
     right: 0;
     font-size: 0.55rem;
     font-weight: bold;
-    color: ${colors.primary};
-    background-color: ${colors.primaryLight};
-    border: 0.2em solid ${colors.primary};
+    color: inherit;
+    background-color: inherit;
+    border: 0.2em solid ${colors.primaryDark};
     border-right: none;
     border-bottom: none;
     padding: 0.3em 1.2em;
