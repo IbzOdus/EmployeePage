@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
+import { expandLineBreakDelimiters } from '../../helpers';
 
 const AboutContent = styled.div`
     max-width: 50ch;
@@ -21,18 +22,9 @@ export default function AboutSection({ text }) {
             backgroundUrl={`/${'Code Background Center.png'}`}>
             <SectionHeading>About</SectionHeading>
             <AboutContent>
-                {/* Depending on how your new line is delimited, this functionality will need to be changed. */}
                 {text
-                    ? text
-                          .split('\\n')
-                          .map((x, i) =>
-                              x !== '' ? <p key={i}>{x}</p> : <br key={i} />
-                          )
-                    : dummyText
-                          .split('<br />')
-                          .map((x, i) =>
-                              x !== '' ? <p key={i}>{x}</p> : <br key={i} />
-                          )}
+                    ? expandLineBreakDelimiters(text, '\\n')
+                    : expandLineBreakDelimiters(dummyText, '<br />')}
             </AboutContent>
         </SectionWrapper>
     );

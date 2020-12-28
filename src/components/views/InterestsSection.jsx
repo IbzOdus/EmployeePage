@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 import { colors } from '../../constants';
+import { expandLineBreakDelimiters } from '../../helpers';
 
 const Container = styled.div`
     display: flex;
@@ -42,18 +43,9 @@ export default function InterestsSection({ picture, text }) {
             <Container>
                 <ActionImage src={`./${picture}`} />
                 <InterestsText>
-                    {/* Depending on how your new line is delimited, this functionality will need to be changed. */}
                     {text
-                        ? text
-                              .split('\\n')
-                              .map((x, i) =>
-                                  x !== '' ? <p key={i}>{x}</p> : <br key={i} />
-                              )
-                        : dummyText
-                              .split('<br />')
-                              .map((x, i) =>
-                                  x !== '' ? <p key={i}>{x}</p> : <br key={i} />
-                              )}
+                        ? expandLineBreakDelimiters(text, '\\n')
+                        : expandLineBreakDelimiters(dummyText, '<br />')}
                 </InterestsText>
             </Container>
         </SectionWrapper>
