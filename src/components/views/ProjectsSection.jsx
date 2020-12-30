@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
-import { colors } from '../../constants';
+import { Colors } from '../../constants';
 import ProjectCard from './ProjectCard';
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const CardsContainer = styled.div`
 `;
 
 const NavArrow = styled.span`
-    color: ${colors.primaryLight};
+    color: ${Colors.primaryLight};
     font-size: 3rem;
     visibility: ${props => props.atBoundary && 'hidden'};
 
@@ -92,8 +92,8 @@ export default function ProjectsSection({ projects, color }) {
     return (
         <SectionWrapper
             id='projects'
-            backgroundColor={colors.primary}
-            color={colors.primaryDark}>
+            backgroundColor={Colors.primary}
+            color={Colors.primaryDark}>
             <SectionHeading color={'#FFFFFF'}>Projects</SectionHeading>
             <Container>
                 <NavArrow
@@ -130,7 +130,7 @@ export default function ProjectsSection({ projects, color }) {
                             i >= startIndex &&
                             i <= startIndex + displayCount - 1
                         }
-                        color={color || colors.primaryLight}
+                        color={color || Colors.primaryLight}
                     />
                 ))}
             </NavIndicator>

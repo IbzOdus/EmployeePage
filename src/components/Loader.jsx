@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants';
+import { Colors } from '../constants';
 
 const LoadingDiv = styled.div`
     border: 10px solid #f3f3f3;
-    border-top: 10px solid ${colors.primary};
+    border-top: 10px solid ${Colors.primary};
     border-radius: 50%;
     width: 100px;
     height: 100px;

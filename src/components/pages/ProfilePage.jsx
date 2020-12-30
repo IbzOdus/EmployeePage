@@ -6,7 +6,7 @@ import AboutSection from '../views/AboutSection';
 import InterestsSection from '../views/InterestsSection';
 import ProjectsSection from '../views/ProjectsSection';
 import LinksSection from '../views/LinksSection';
-import { defaultUser } from '../../constants';
+import { DefaultUser } from '../../constants';
 
 const Container = styled.div`
     display: flex;
@@ -26,7 +26,7 @@ export default function ProfilePage() {
      * with the user data. If there was some sort of issue retrieving the data, return the appropriate
      * response (400, 404 etc)
      */
-    const [user] = useState(defaultUser);
+    const [user] = useState(DefaultUser);
 
     return (
         <Container>

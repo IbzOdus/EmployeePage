@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants';
+import { Colors } from '../constants';
 
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: ${colors.primary};
+    background-color: ${Colors.primary};
 `;
 
 const Logo = styled.div`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants';
+import { Colors } from '../constants';
 
 const Container = styled.nav`
     position: fixed;
@@ -12,7 +12,7 @@ const Container = styled.nav`
     width: ${props => (props.open ? 'calc(100% - 2rem)' : '2rem')};
     height: 2rem;
     border-radius: 1.5rem;
-    background-color: ${colors.primary};
+    background-color: ${Colors.primary};
     mix-blend-mode: luminosity;
     border: 0.1rem solid white;
     color: white;

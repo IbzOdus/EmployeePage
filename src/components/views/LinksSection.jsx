@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
 import LinkItem from '../LinkItem';
-import { colors } from '../../constants';
+import { Colors } from '../../constants';
 
 const Container = styled.ul`
     display: flex;
@@ -24,7 +24,7 @@ export default function LinksSection({ links, color }) {
     return (
         <SectionWrapper
             id='links'
-            backgroundColor={color || colors.primaryLight}>
+            backgroundColor={color || Colors.primaryLight}>
             <SectionHeading color={'#FFFFFF'}>Links</SectionHeading>
             <Container>
                 {links.map((link, index) => {

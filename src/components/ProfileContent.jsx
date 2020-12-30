@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants';
+import { Colors } from '../constants';
 
 const Container = styled.div`
     position: relative;
@@ -28,7 +28,7 @@ const TextContainer = styled.div`
     font-family: 'Courier New';
     font-size: 1rem;
     font-weight: bold;
-    color: ${colors.primary};
+    color: ${Colors.primary};
     margin-right: 1rem;
 
     @media only screen and (max-width: 700px) {
@@ -40,7 +40,7 @@ const TextContainer = styled.div`
 const Name = styled.span`
     font-family: 'Agency FB', 'Roboto';
     font-size: 3.8rem;
-    color: ${props => props.color || colors.primary};
+    color: ${props => props.color || Colors.primary};
 
     @media only screen and (max-width: 700px) {
         font-size: 1.8rem;
@@ -85,7 +85,7 @@ const PositionAccent = styled.div`
 `;
 
 const PositionAccentColor = styled.span`
-    background-color: ${props => props.color || colors.primary};
+    background-color: ${props => props.color || Colors.primary};
     border-radius: 0.5rem;
     flex: 1;
     height: 100%;

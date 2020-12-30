@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { colors } from '../../constants';
+import { Colors } from '../../constants';
 
 const Container = styled.div`
     position: relative;
@@ -16,7 +16,7 @@ const Container = styled.div`
     max-width: 10rem;
     padding: 0.8em;
     margin: 0rem 1rem;
-    background-color: ${colors.primaryLight};
+    background-color: ${Colors.primaryLight};
     border-radius: 0.6rem;
     box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.4);
 
@@ -90,7 +90,7 @@ const Button = styled.button`
     font-weight: bold;
     color: inherit;
     background-color: inherit;
-    border: 0.2em solid ${colors.primaryDark};
+    border: 0.2em solid ${Colors.primaryDark};
     border-right: none;
     border-bottom: none;
     padding: 0.3em 1.2em;

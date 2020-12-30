@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionWrapper, SectionHeading } from '../pages/Common';
-import { expandLineBreakDelimiters } from '../../helpers';
+import { ExpandLineBreakDelimiters } from '../../helpers';
 
 const AboutContent = styled.div`
     max-width: 50ch;
@@ -23,8 +23,8 @@ export default function AboutSection({ text }) {
             <SectionHeading>About</SectionHeading>
             <AboutContent>
                 {text
-                    ? expandLineBreakDelimiters(text, '\\n')
-                    : expandLineBreakDelimiters(dummyText, '<br />')}
+                    ? ExpandLineBreakDelimiters(text, '\\n')
+                    : ExpandLineBreakDelimiters(dummyText, '<br />')}
             </AboutContent>
         </SectionWrapper>
     );

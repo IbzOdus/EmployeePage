@@ -1,10 +1,10 @@
-export const colors = {
+export const Colors = {
     primary: '#7f8c8d',
     primaryLight: '#bdc3c7',
     primaryDark: '#353b48',
 };
 
-export const defaultUser = {
+export const DefaultUser = {
     name: 'Person Name',
     position: 'Full-Stack Developer',
     image: 'pexels-pixabay-35183.jpg',
